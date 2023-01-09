@@ -55,21 +55,74 @@ namespace ConsoleMenuExample
                     Console.ReadKey();
                     return true;
                 case "2":
-                    
+                    Console.WriteLine("Ingresa tu nombre: ");
+                    string input2 = Console.ReadLine();
+                    // Mostrar el string en minúsculas y en mayúsculas
+                    Console.WriteLine("Minúsculas: " + input2.ToLower());
+                    Console.WriteLine("Mayúsculas: " + input2.ToUpper());
+                    Console.ReadKey();
                     return true;
                 case "3":
-
+                    Console.WriteLine("Ingresa una palabra o frase: ");
+                    string input3 = Console.ReadLine();
+                    Console.WriteLine("Ingresa una letra: ");
+                    char letter = Console.ReadLine()[0];
+                    // Contar las ocurrencias de la letra en el string
+                    int count = 0;
+                    for (int i = 0; i < input3.Length; i++)
+                    {
+                        if (input3[i] == letter)
+                        {
+                            count++;
+                        }
+                    }
+                    Console.WriteLine("La letra '" + letter + "' se repite " + count + " veces.");
+                    Console.ReadKey();
                     return true;
                 case "4":
+                    Console.WriteLine("Ingresa el primer string: ");
+                    string input4 = Console.ReadLine();
 
-                    return true;
+                    Console.WriteLine("Ingresa el segundo string: ");
+                    string input5 = Console.ReadLine();
+
+                    Console.WriteLine("Ingresa el número de veces que quieres repetir los strings: ");
+                    int repeat = int.Parse(Console.ReadLine());
+
+                    // Repetir los strings el número de veces indicado
+                    for (int i = 0; i < repeat; i++)
+                    {
+                        Console.Write($"{input4} ");
+                        Console.Write($"{input5} ");
+                    }
+                    Console.ReadKey();
+                            return true;
                 case "5":
+                    Console.WriteLine("Ingresa una palabra o frase: ");
+                    string input6 = Console.ReadLine();
 
+                    Console.WriteLine("El string con las letras repetidas es: ");
+
+                    // Volver a escribir el string repitiendo cada letra
+                    foreach (char letter1 in input6)
+                    {
+                        Console.Write(new string(letter1, 2));
+                    }
+
+                    Console.ReadKey();
                     return true;
                 case "6":
-
+                    Console.WriteLine("Ingresa el primer string: ");
+                    string input7 = Console.ReadLine();
+                    Console.WriteLine("Ingresa el segundo string: ");
+                    string input8 = Console.ReadLine();
+                    // Eliminar las apariencias del segundo string del primero
+                    string result = input7.Replace(input8, "");
+                    Console.WriteLine("El resultado es: " + result);
+                    Console.ReadKey();
                     return true;
                 case "7":
+
                     return false;
                 default:
                     Console.WriteLine("Opción inválida.");
